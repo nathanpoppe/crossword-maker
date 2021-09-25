@@ -1,5 +1,4 @@
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -76,7 +75,7 @@ public class CrosswordReader {
             }
             scanner.close();
         }
-        catch(FileNotFoundException e){
+        catch(Exception e){
             System.out.println("File: " + filePath + " not found.");
         }
         return crosswordList;
