@@ -41,12 +41,15 @@ public class PDFWriter {
     private final static int DOC_WIDTH = 612;
     private final static int DOC_HEIGHT = 792;
     private final static int TITLE_FONT_SIZE = 24;
-    private final static int CLUES_FONT_SIZE = 9;
+    private final static int MAX_CLUES_FONT_SIZE = 14;
+
     private final static int MARGIN_SIZE = 36;
     private final static int NUM_COLUMNS = 3;
     private final static int COLUMN_WIDTH = (DOC_WIDTH - (NUM_COLUMNS + 1) * MARGIN_SIZE) / NUM_COLUMNS;
     private final static int COLUMN_HEIGHT = (int)(DOC_HEIGHT - MARGIN_SIZE * 2 - TITLE_FONT_SIZE - SPACING_RATIO * TITLE_FONT_SIZE);
-    private final static int TITLE_BOTTOM_GAP = (int)(TITLE_FONT_SIZE * SPACING_RATIO + CLUES_FONT_SIZE * SPACING_RATIO);
+
+    private int cluesFontSize = MAX_CLUES_FONT_SIZE;
+    private int titleBottomGap = (int)(TITLE_FONT_SIZE * SPACING_RATIO + MAX_CLUES_FONT_SIZE * SPACING_RATIO);
 
     private int cellSize;
 
@@ -56,23 +59,26 @@ public class PDFWriter {
 
         try {
             writer = new PdfWriter(fileName);
-            pdf = new PdfDocument(writer);
-            pdf.setDefaultPageSize(new PageSize(DOC_WIDTH, DOC_HEIGHT));
-            doc = new Document(pdf);
         }
         catch(FileNotFoundException e){
             System.out.println("Could not find/create file: " + fileName);
         }
     }
 
-    public void createSizedPDF(){
-        do{
+    public void createOnePagePDF(){
+        int numPages = 0;
+        cluesFontSize = MAX_CLUES_FONT_SIZE;
+        while(numPages != 1){
             createPDF();
+            numPages = pdf.getNumberOfPages();
+            cluesFontSize--;
+            titleBottomGap = (int)(TITLE_FONT_SIZE * SPACING_RATIO + cluesFontSize * SPACING_RATIO);
         }
-        while(pdf.getNumberOfPages() != 1);
+        doc.close();
     }
 
-    public void createPDF() {
+    private void createPDF() {
+        createDocument();
         setFormatting();
         setFont();
         createTitle();
@@ -80,13 +86,18 @@ public class PDFWriter {
         setColumns();
         createClues("ACROSS", crossword.getAcrossClues());
         createClues("DOWN", crossword.getDownClues());
-        doc.close();
+    }
+
+    private void createDocument(){
+        pdf = new PdfDocument(writer);
+        pdf.setDefaultPageSize(new PageSize(DOC_WIDTH, DOC_HEIGHT));
+        doc = new Document(pdf);
     }
 
     private void createGrid() {
         Table grid = new Table(UnitValue.createPercentArray(crossword.getWidth()));
         grid.setHorizontalAlignment(HorizontalAlignment.RIGHT);
-        grid.setMarginTop(TITLE_BOTTOM_GAP);
+        grid.setMarginTop(titleBottomGap);
 
         cellSize = (int)((COLUMN_WIDTH * 2 + 1.5 * MARGIN_SIZE - crossword.getWidth()) / crossword.getWidth());
         doc.setFontSize(NUMBER_FONT_RATIO * cellSize);
@@ -133,14 +144,14 @@ public class PDFWriter {
     private void setColumns(){
         Rectangle[] columns = {
                 new Rectangle(MARGIN_SIZE, MARGIN_SIZE, COLUMN_WIDTH, COLUMN_HEIGHT),
-                new Rectangle(MARGIN_SIZE * 2 + COLUMN_WIDTH, MARGIN_SIZE, COLUMN_WIDTH, COLUMN_HEIGHT - cellSize * crossword.getHeight() - TITLE_BOTTOM_GAP),
-                new Rectangle(MARGIN_SIZE * 3 + COLUMN_WIDTH * 2, MARGIN_SIZE, COLUMN_WIDTH, COLUMN_HEIGHT - cellSize * crossword.getHeight() - TITLE_BOTTOM_GAP)};
+                new Rectangle(MARGIN_SIZE * 2 + COLUMN_WIDTH, MARGIN_SIZE, COLUMN_WIDTH, COLUMN_HEIGHT - cellSize * crossword.getHeight() - titleBottomGap),
+                new Rectangle(MARGIN_SIZE * 3 + COLUMN_WIDTH * 2, MARGIN_SIZE, COLUMN_WIDTH, COLUMN_HEIGHT - cellSize * crossword.getHeight() - titleBottomGap)};
 
         doc.setRenderer(new ColumnDocumentRenderer(doc, columns));
     }
 
     private void createClues(String clueHeader, ArrayList<Clue> clues){
-        doc.setFontSize(CLUES_FONT_SIZE);
+        doc.setFontSize(cluesFontSize);
         doc.add(new Paragraph(clueHeader));
         List list = new List();
         for(int i = 0; i < clues.size(); i++){

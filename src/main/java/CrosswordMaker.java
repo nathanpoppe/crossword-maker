@@ -87,7 +87,7 @@ public class CrosswordMaker {
 
     public void saveAsPDF(){
         pdfWriter = new PDFWriter(currCrossword);
-        pdfWriter.createPDF();
+        pdfWriter.createOnePagePDF();
         pdfWriter.openPDF();
     }
 
