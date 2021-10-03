@@ -3,7 +3,7 @@ import java.io.File;
 
 public class FileChooser extends JFileChooser {
 
-    private final static String FILE_PATH = "src/main/resources/crosswords";
+    private final static String FILE_PATH = "resources/crosswords";
 
     public FileChooser(){
         setCurrentDirectory(new File(FILE_PATH));

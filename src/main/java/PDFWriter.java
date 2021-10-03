@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 public class PDFWriter {
 
-    private final static String FONT_LOCATION = "src/main/resources/arial.ttf";
+    private final static String FONT_LOCATION = "resources/arial.ttf";
 
     private Crossword crossword;
     private String fileName;
