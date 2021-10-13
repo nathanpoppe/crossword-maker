@@ -5,8 +5,8 @@ import java.awt.event.ActionListener;
 
 public class NextButton extends JButton implements ActionListener {
 
-    private static final String PREV_ICON_NAME = "resources/previous-icon.png";
-    private static final String NEXT_ICON_NAME = "resources/next-icon.png";
+    private static final String PREV_ICON_NAME = "src/main/resources/previous-icon.png";
+    private static final String NEXT_ICON_NAME = "src/main/resources/next-icon.png";
 
     private ImageIcon icon;
     private boolean isNext;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class CrosswordWriter {
 
-    private final static String SAVE_FILE_LOCATION = "resources/crosswords/";
+    private final static String SAVE_FILE_LOCATION = "src/main/resources/crosswords/";
 
     public void saveCrossword(Crossword crossword){
         try{

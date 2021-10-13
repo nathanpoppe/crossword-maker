@@ -1,12 +1,13 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WordFinder {
 
-    private final static String REG_FILE_NAME = "resources/84000-words.txt";
-    private final static String LONG_FILE_NAME = "resources/370000-words.txt";
+    private final static String REG_FILE_NAME = "src/main/resources/84000-words.txt";
+    private final static String LONG_FILE_NAME = "src/main/resources/370000-words.txt";
 
     private ArrayList<String> regWordList;
     private ArrayList<String> longWordList;

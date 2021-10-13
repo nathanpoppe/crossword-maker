@@ -326,7 +326,7 @@ public class CrosswordGraphics extends JPanel implements MouseListener, KeyListe
                     moveUp();
                 }
             } else if (selectedJ != 0 && crossword.getNumbers()[selectedJ - 1][selectedI] != -1) {
-                selectedI--;
+                selectedJ--;
             }
         }
     }
