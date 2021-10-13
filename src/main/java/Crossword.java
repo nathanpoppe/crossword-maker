@@ -315,7 +315,7 @@ public class Crossword {
             difficulty = "Hard";
         else if(percentOpen >= MED_DIFF_BENCHMARK)
             difficulty = "Medium";
-        this.name = width + " x " + height + " (" + difficulty + ")";
+        this.name = width + "x" + height + "-" + difficulty;
     }
 
     public void fillInWord(String word, int clueNumber, boolean isAcross){

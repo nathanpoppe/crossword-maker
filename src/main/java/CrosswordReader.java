@@ -39,7 +39,8 @@ public class CrosswordReader {
         ArrayList<Crossword> crosswordList = new ArrayList<Crossword>();
 
         try{
-            Scanner scanner = new Scanner(new File(filePath));
+            InputStream inputStream = getClass().getResourceAsStream(filePath);
+            Scanner scanner = new Scanner(new InputStreamReader(inputStream));
             while(scanner.hasNextLine()){
                 String name = scanner.nextLine();
                 int width = Integer.parseInt(scanner.nextLine());
