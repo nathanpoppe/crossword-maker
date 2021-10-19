@@ -1,4 +1,4 @@
-import java.io.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -39,8 +39,7 @@ public class CrosswordReader {
         ArrayList<Crossword> crosswordList = new ArrayList<Crossword>();
 
         try{
-            InputStream inputStream = getClass().getResourceAsStream(filePath);
-            Scanner scanner = new Scanner(new InputStreamReader(inputStream));
+            Scanner scanner = new Scanner(new File(filePath));
             while(scanner.hasNextLine()){
                 String name = scanner.nextLine();
                 int width = Integer.parseInt(scanner.nextLine());

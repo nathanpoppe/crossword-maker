@@ -35,6 +35,8 @@ public class HelperPanel implements ChangeListener, ListSelectionListener, ItemL
     private JScrollPane wordListScroller; // adds a scroll pane to the wordList
     private JPanel filterPanel; // a JPanel containing a Checkbox and a Combobox to filter word list
     private JComboBox setDictionaryComboBox;
+    private String regDictionaryName = "84000 Words";
+    private String longDictionaryName = "370000 Words";
     private JCheckBox setAlternatingCheckBox;
 
     private boolean isAlternating = false;
@@ -194,8 +196,8 @@ public class HelperPanel implements ChangeListener, ListSelectionListener, ItemL
 
         filterPanel.add(new JLabel("Dictionary Size: "));
         setDictionaryComboBox = new JComboBox<String>();
-        setDictionaryComboBox.addItem("84000 Words");
-        setDictionaryComboBox.addItem("480000 Words");
+        setDictionaryComboBox.addItem(regDictionaryName);
+        setDictionaryComboBox.addItem(longDictionaryName);
         setDictionaryComboBox.addItemListener(this);
         filterPanel.add(setDictionaryComboBox);
 

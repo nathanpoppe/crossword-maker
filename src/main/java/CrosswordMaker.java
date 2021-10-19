@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class CrosswordMaker {
 
-    private static final String TEMPLATES_FILE_PATH = "crossword-templates.txt";
+    private static final String TEMPLATES_FILE_PATH = "src/main/resources/crossword-templates.txt";
 
     private CrosswordReader crosswordReader;
     private ArrayList<Crossword> templates;
