@@ -13,7 +13,14 @@ Features include:
 * Saving as an auto-formatted 1 page PDF document for easy printing
 
 ## Running the Program (Unix)
-Enter the following command prompts into the terminal:
+
+You will need to have the Java Runtime Environment installed to run any java applications.
+The download link is available here: https://www.java.com/en/download/manual.jsp
+
+To download the java files: click the green 'Code' button and then the 'Download ZIP' button.
+Locate the zip file in your Downloads folder and open it.
+
+Next, enter the following command prompts into the terminal:
 
 1. Locate CrosswordMaker directory: 
    
