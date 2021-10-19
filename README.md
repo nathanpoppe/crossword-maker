@@ -2,7 +2,7 @@
 
 ## Description
 
-This program provides an easy-to-use GUI for creating and saving crosswords. 
+This program provides an easy-to-use GUI for creating and saving crosswords. If you enjoy doing crosswords and want to take a stab at making your own you've come to the right place! :)
 
 Features include:
 * Creating and saving crossword templates for future use
