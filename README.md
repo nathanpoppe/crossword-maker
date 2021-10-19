@@ -13,13 +13,16 @@ Features include:
 * Saving as an auto-formatted 1 page PDF document for easy printing
 
 ## Running the Program (Unix)
+Enter the following command prompts into the terminal:
 
-Compile: 
-javac -cp .:jars/io-7.1.16.jar:jars/kernel-7.1.16.jar:jars/layout-7.1.16.jar:jars/log4j.jar:jars/slf4j.api-1.6.1.jar:jars/slf4j-log4j12-1.7.8.jar: -Xlint:unchecked Clue.java CluesPanel.java ControlPanel.java Crossword.java CrosswordGraphics.java CrosswordMaker.java CrosswordReader.java CrosswordWriter.java FileChooser.java GUI.java HelperPanel.java LetterField.java Main.java Menu.java NextButton.java PDFWriter.java TitleScreen.java WordFinder.java
-javac -cp .:java/jars/io-7.1.16.jar:java/jars/kernel-7.1.16.jar:java/jars/layout-7.1.16.jar:java/jars/log4j.jar:java/jars/slf4j.api-1.6.1.jar:java/jars/slf4j-log4j12-1.7.8.jar: -Xlint:unchecked java/Clue.java java/CluesPanel.java java/ControlPanel.java java/Crossword.java java/CrosswordGraphics.java java/CrosswordMaker.java java/CrosswordReader.java java/CrosswordWriter.java java/FileChooser.java java/GUI.java java/HelperPanel.java java/LetterField.java java/Main.java java/Menu.java java/NextButton.java java/PDFWriter.java java/TitleScreen.java java/WordFinder.java
+1. Locate CrosswordMaker directory: 
+   
+cd Downloads/crossword-maker-master/src/main
+   
+2. Compile code: 
 
-Run: 
-java -cp .:jars/io-7.1.16.jar:jars/kernel-7.1.16.jar:jars/layout-7.1.16.jar:jars/log4j.jar:jars/slf4j.api-1.6.1.jar:jars/slf4j-log4j12-1.7.8.jar: Main
-java -cp .:java/jars/io-7.1.16.jar:java/jars/kernel-7.1.16.jar:java/jars/layout-7.1.16.jar:java/jars/log4j.jar:java/jars/slf4j.api-1.6.1.jar:java/jars/slf4j-log4j12-1.7.8.jar: Main
+javac -cp .:java/jars/io-7.1.16.jar:java/jars/kernel-7.1.16.jar:java/jars/layout-7.1.16.jar:java/jars/log4j.jar:java/jars/slf4j.api-1.6.1.jar:java/jars/slf4j-log4j12-1.7.8.jar: -Xlint:unchecked java/*.java
+   
+3. Run program: 
 
-
+java -cp .:java/jars/io-7.1.16.jar:java/jars/kernel-7.1.16.jar:java/jars/layout-7.1.16.jar:java/jars/log4j.jar:java/jars/slf4j.api-1.6.1.jar:java/jars/slf4j-log4j12-1.7.8.jar: java/Main
