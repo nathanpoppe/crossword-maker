@@ -2,7 +2,7 @@
 
 ## Description
 
-This program provides an easy-to-use GUI for creating and saving crosswords. 
+This program provides an easy-to-use GUI for creating and saving crosswords. If you enjoy doing crosswords and want to take a stab at making your own you've come to the right place! :)
 
 Features include:
 * Creating and saving crossword templates for future use
@@ -13,16 +13,29 @@ Features include:
 * Saving as an auto-formatted 1 page PDF document for easy printing
 
 ## Running the Program (Unix)
-Enter the following command prompts into the terminal:
+
+You will need to have the Java Runtime Environment installed to run any java applications.
+The download link is available here: https://www.java.com/en/download/manual.jsp
+
+To download the CrosswordMaker files: click the green 'Code' button and then the 'Download ZIP' button.
+Locate the zip file in your Downloads folder and open it.
+
+Next, enter the following command prompts into the terminal:
 
 1. Locate CrosswordMaker directory: 
-   
+
+```
 cd Downloads/crossword-maker-master/src/main
-   
+```
+
 2. Compile code: 
 
+```
 javac -cp .:java/jars/io-7.1.16.jar:java/jars/kernel-7.1.16.jar:java/jars/layout-7.1.16.jar:java/jars/log4j.jar:java/jars/slf4j.api-1.6.1.jar:java/jars/slf4j-log4j12-1.7.8.jar: -Xlint:unchecked java/*.java
+```
    
 3. Run program: 
 
+```
 java -cp .:java/jars/io-7.1.16.jar:java/jars/kernel-7.1.16.jar:java/jars/layout-7.1.16.jar:java/jars/log4j.jar:java/jars/slf4j.api-1.6.1.jar:java/jars/slf4j-log4j12-1.7.8.jar: java/Main
+```
