@@ -34,7 +34,7 @@ public class HelperPanel implements ChangeListener, ListSelectionListener, ItemL
     private JList<String> wordList; // the graphical list containing all the words
     private JScrollPane wordListScroller; // adds a scroll pane to the wordList
     private JPanel filterPanel; // a JPanel containing a Checkbox and a Combobox to filter word list
-    private JComboBox setDictionaryComboBox;
+    private JComboBox<String> setDictionaryComboBox;
     private String regDictionaryName = "84000 Words";
     private String longDictionaryName = "370000 Words";
     private JCheckBox setAlternatingCheckBox;
