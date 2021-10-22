@@ -35,11 +35,11 @@ javac -cp .:java/jars/io-7.1.16.jar:java/jars/kernel-7.1.16.jar:java/jars/layout
 ```
 
 ```
-javac -cp .:code/jars/io-7.1.16.jar:code/jars/kernel-7.1.16.jar:code/jars/layout-7.1.16.jar:code/jars/log4j.jar:code/jars/slf4j.api-1.6.1.jar:code/jars/slf4j-log4j12-1.7.8.jar: -Xlint:unchecked code/*.java
+javac -cp .:code/jars/io-7.1.16.jar:code/jars/kernel-7.1.16.jar:code/jars/layout-7.1.16.jar:code/jars/apache-logging-log4j.jar:code/jars/slf4j.api-1.6.1.jar:code/jars/slf4j-log4j12-1.7.8.jar: -Xlint:unchecked code/*.java
 ```
    
 3. Run program: 
 
 ```
-java -cp .:code/jars/io-7.1.16.jar:code/jars/kernel-7.1.16.jar:code/jars/layout-7.1.16.jar:code/jars/log4j.jar:code/jars/slf4j.api-1.6.1.jar:code/jars/slf4j-log4j12-1.7.8.jar: code/Main
+java -cp .:code/jars/io-7.1.16.jar:code/jars/kernel-7.1.16.jar:code/jars/layout-7.1.16.jar:code/jars/apache-logging-log4j.jar:code/jars/slf4j.api-1.6.1.jar:code/jars/slf4j-log4j12-1.7.8.jar: code/Main
 ```
