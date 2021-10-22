@@ -31,10 +31,6 @@ cd Downloads/crossword-maker-master/src/main
 2. Compile code: 
 
 ```
-javac -cp .:java/jars/io-7.1.16.jar:java/jars/kernel-7.1.16.jar:java/jars/layout-7.1.16.jar:java/jars/log4j.jar:java/jars/slf4j.api-1.6.1.jar:java/jars/slf4j-log4j12-1.7.8.jar: -Xlint:unchecked java/*.java
-```
-
-```
 javac -cp .:code/jars/io-7.1.16.jar:code/jars/kernel-7.1.16.jar:code/jars/layout-7.1.16.jar:code/jars/apache-logging-log4j.jar:code/jars/slf4j.api-1.6.1.jar:code/jars/slf4j-log4j12-1.7.8.jar: -Xlint:unchecked code/*.java
 ```
    
