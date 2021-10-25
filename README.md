@@ -25,17 +25,17 @@ Next, enter the following command prompts into the terminal:
 1. Locate CrosswordMaker directory: 
 
 ```
-cd Downloads/crossword-maker-master/src/main
+cd Downloads/crossword-maker-master/src
 ```
 
 2. Compile code: 
 
 ```
-javac -cp .:code/jars/io-7.1.16.jar:code/jars/kernel-7.1.16.jar:code/jars/layout-7.1.16.jar:code/jars/apache-logging-log4j.jar:code/jars/slf4j.api-1.6.1.jar:code/jars/slf4j-log4j12-1.7.8.jar: -Xlint:unchecked code/*.java
+javac -cp .:jars/apache-logging-log4j.jar:jars/io-7.1.16.jar:jars/kernel-7.1.16.jar:jars/layout-7.1.16.jar:jars/log4j.jar:jars/slf4j.api-1.6.1.jar:jars/slf4j-log4j12-1.7.8.jar: -Xlint:unchecked Clue.java CluesPanel.java ControlPanel.java Crossword.java CrosswordGraphics.java CrosswordMaker.java CrosswordReader.java CrosswordWriter.java FileChooser.java GUI.java HelperPanel.java LetterField.java Main.java Menu.java NextButton.java PDFWriter.java TitleScreen.java WordFinder.java
 ```
    
 3. Run program: 
 
 ```
-java -cp .:code/jars/io-7.1.16.jar:code/jars/kernel-7.1.16.jar:code/jars/layout-7.1.16.jar:code/jars/apache-logging-log4j.jar:code/jars/slf4j.api-1.6.1.jar:code/jars/slf4j-log4j12-1.7.8.jar: code/Main
+java -cp .:jars/apache-logging-log4j.jar:jars/io-7.1.16.jar:jars/kernel-7.1.16.jar:jars/layout-7.1.16.jar:jars/log4j.jar:jars/slf4j.api-1.6.1.jar:jars/slf4j-log4j12-1.7.8.jar: Main
 ```
